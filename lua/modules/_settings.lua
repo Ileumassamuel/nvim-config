@@ -89,9 +89,3 @@ local autocmds = {
 }
 
 myUtils.nvim_create_augroups(autocmds)
-
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = false
-    }
-)

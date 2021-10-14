@@ -64,15 +64,15 @@ wk.register({
     },
     c = {
         name = '+code',
-        d = { "<cmd>execute \"lua require'lspsaga.diagnostic'.show_line_diagnostics()\"<cr>", "Show line diagnostics"},
-        r = { "<cmd>execute \"lua require('lspsaga.rename').rename()\"<cr>", "Rename symbol" },
+        d = { "<cmd>execute \"lua vim.lsp.diagnostic.show_line_diagnostics()\"<cr>", "Show line diagnostics"},
+        -- r = { "<cmd>execute \"lua require('lspsaga.rename').rename()\"<cr>", "Rename symbol" },
         w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "Show workspace diagnostics" },
-        a = { "<cmd>execute \"lua require('lspsaga.codeaction').code_action()\"<cr>", "Code actions"},
+        -- a = { "<cmd>execute \"lua require('lspsaga.codeaction').code_action()\"<cr>", "Code actions"},
         x = { "<cmd>TroubleToggle<cr>", "Show errors"}
     },
     g = {
         name = '+git',
-        g = { "<cmd>execute \"lua require('lspsaga.floaterm').open_float_terminal('lazygit')\"<cr>", 'Git status'},
+        -- g = { "<cmd>execute \"lua require('lspsaga.floaterm').open_float_terminal('lazygit')\"<cr>", 'Git status'},
         r = { "<cmd>execute \"lua require'gitsigns'.reset_hunk()\"<cr>", 'Reset hunk'},
         b = { '<cmd>Git blame<cr>', 'Git blame' },
         u = { "<cmd>execute \"lua require'gitsigns'.undo_stage_hunk()\"<cr>", 'Undo stage hunk' },
@@ -105,7 +105,7 @@ wk.register({
 
 wk.register({
     h = "Previous hunk",
-    e = "Previous lsp error",
+    e = { "<cmd>execute \"lua vim.lsp.diagnostic.goto_prev()\"<cr>", "Previous lsp error"},
     [" "] = "Add lines above",
     o = "Add lines above",
     ["["] = "Previous class start",
@@ -113,7 +113,7 @@ wk.register({
 
 wk.register({
     h = "Next hunk",
-    e = "Next lsp error",
+    e = { "<cmd>execute \"lua vim.lsp.diagnostic.goto_next()\"<cr>" , "Next lsp error"},
     [" "] = "Add lines below",
     o = "Add lines below",
     ["]"] = "Next class start",
@@ -125,7 +125,7 @@ wk.register({
 
     r = { "<cmd>TroubleToggle lsp_references<cr>", "Go to reference" },
 
-    D = { "<cmd>execute \"lua require'lspsaga.provider'.lsp_finder()\"<cr>", "Preview definition and references" },
+    -- D = { "<cmd>execute \"lua require'lspsaga.provider'.lsp_finder()\"<cr>", "Preview definition and references" },
     ["0"] = { "<cmd>execute \"lua vim.lsp.buf.document_symbol()\"<cr>", "Go to document symbol" },
     -- bug with mapping below
     -- s = { "<cmd>execute \"lua require'lspsaga.provider'.preview_definition()\"<cr>", "Preview definition" },

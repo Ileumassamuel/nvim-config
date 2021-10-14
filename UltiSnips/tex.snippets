@@ -405,9 +405,21 @@ snippet "hat" "hat" riA
 endsnippet
 
 context "math()"
+priority 10
+snippet "tilde" "tilde" riA
+\tilde{$1}$0
+endsnippet
+
+context "math()"
 priority 100
 snippet "([a-zA-Z])hat" "hat" riA
 \hat{`!p snip.rv=match.group(1)`}
+endsnippet
+
+context "math()"
+priority 100
+snippet "([a-zA-Z])tilde" "tilde" riA
+\tilde{`!p snip.rv=match.group(1)`}
 endsnippet
 
 # Set notation
@@ -545,7 +557,7 @@ endsnippet
 
 priority 200
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|zeta|beta|gamma|omega|lambda|psi|phi|Phi|Psi|Gamma|Omega|Lambda)' "ln" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|zeta|beta|gamma|omega|delta|sigma|lambda|psi|phi|Phi|Psi|Gamma|Omega|Lambda)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
@@ -574,7 +586,7 @@ endsnippet
 
 context "math()"
 snippet eps "epsilon" iA
-\epsilon 
+\epsilon
 endsnippet
 
 context "math()"

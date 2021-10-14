@@ -27,18 +27,17 @@ return require('packer').startup(function()
     -- Language server protocol
     use {'neovim/nvim-lspconfig', opt = false}
     -- UI for Lsp commands
-    use {'glepnir/lspsaga.nvim', opt = true, branch = 'main', requires = { 'onsails/lspkind-nvim' } }
-    use { 'onsails/lspkind-nvim'}
+    -- use {'glepnir/lspsaga.nvim', opt = true, branch = 'main', requires = { 'onsails/lspkind-nvim' } }
     -- UI for Lsp errors
     use {
         "folke/trouble.nvim",
         opt = true
     }
     -- Signature help
-    use {
-        "ray-x/lsp_signature.nvim",
-        opt = true
-    }
+    -- use {
+    --     "ray-x/lsp_signature.nvim",
+    --     opt = true
+    -- }
 
     -- Completion framework
     use {
