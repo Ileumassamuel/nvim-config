@@ -40,16 +40,6 @@ lspconfig.yamlls.setup{}
 -- Bash language server
 lspconfig.bashls.setup{}
 
--- Typescript/javascript linting
-local eslint = {
-    lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
-    lintStdin = true,
-    lintFormats = {"%f:%l:%c: %m"},
-    lintIgnoreExitCode = true,
-    formatCommand = "eslint_d --fix-to-stdout --stdin --stdin-filename=${INPUT}",
-    formatStdin = true
-}
-
 -- C++ static analysis/linting
 local cppcheck = {
     lintCommand = "cppcheck --quiet --force --enable=style --error-exitcode=1 ${INPUT}",
@@ -95,13 +85,12 @@ vim.g.format_options_css = format_options_prettier
 vim.g.format_options_html = format_options_prettier
 vim.g.format_options_yaml = format_options_prettier
 
+lspconfig.eslint.setup{}
 lspconfig.efm.setup{
     init_options = {documentFormatting = true},
     settings = {
         rootMarkers = {".git/"},
         languages = {
-            typescriptreact = { eslint },
-            typescript = { eslint },
             python = { black, mypy },
             yaml = { prettier },
             json = { prettier },
