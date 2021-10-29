@@ -47,9 +47,9 @@ local options = {
      completeopt = "menuone,noselect",
     -- fillchars = "vert:│,eob:\\ ", -- make vertical split sign better
 
-    foldmethod = "marker",
-    -- foldmethod = "expr", -- foldmethod using marker
-    -- foldexpr = "nvim_treesitter#foldexpr()", -- foldmethod using marker
+    -- foldmethod = "marker",
+    foldmethod = "expr", -- foldmethod using marker
+    foldexpr = "nvim_treesitter#foldexpr()", -- foldmethod using marker
 
     inccommand = "split", -- incrementally show result of command
     -- listchars = "eol:↲,tab:»\\ ", -- set listchars

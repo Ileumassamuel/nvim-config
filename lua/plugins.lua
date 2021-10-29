@@ -47,6 +47,7 @@ return require('packer').startup(function()
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'quangnguyen30192/cmp-nvim-ultisnips' },
             { 'hrsh7th/cmp-path'},
+            { "kdheepak/cmp-latex-symbols" },
         },
     }
     -- use { 
@@ -68,7 +69,12 @@ return require('packer').startup(function()
     use {'honza/vim-snippets', opt = false}
 
     -- Interface
-    use {'kyazdani42/nvim-tree.lua', opt = false} -- super fast file tree viewer
+    use {
+        'kyazdani42/nvim-tree.lua', 
+        requires = {'kyazdani42/nvim-web-devicons'},
+        config = function() require'nvim-tree'.setup {} end,
+        opt = false,
+    } -- super fast file tree viewer
     use {
         'glepnir/galaxyline.nvim', branch = 'main', requires = {'kyazdani42/nvim-web-devicons'},
         config = function ()
@@ -104,6 +110,7 @@ return require('packer').startup(function()
     -- Colorschemes (just the best)
     use { 'sainnhe/sonokai' }
     use { 'sainnhe/edge' }
+    use { 'olimorris/onedarkpro.nvim' }
     use { 'ChristianChiarulli/nvcode-color-schemes.vim' }
     use { 'srcery-colors/srcery-vim' }
     use { 'folke/tokyonight.nvim' }
@@ -124,7 +131,13 @@ return require('packer').startup(function()
     use { 'f-person/git-blame.nvim', opt = true } -- inline blaming
 
     -- Editing
-    use {'b3nj5m1n/kommentary', opt = true } -- Commenting
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+    -- use {'b3nj5m1n/kommentary', opt = true } -- Commenting
     -- use { "tpope/vim-commentary", opt = false } -- Commenting
 
     use {'andymass/vim-matchup', event = 'VimEnter *'} -- Match

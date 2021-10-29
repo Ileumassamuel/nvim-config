@@ -146,7 +146,9 @@ lspconfig.jsonls.setup{}
 lspconfig.html.setup{}
 lspconfig.jdtls.setup{}
 
-lspconfig.pylsp.setup{}
+lspconfig.pylsp.setup{
+    on_attach=on_attach
+}
 
 lspconfig.rls.setup {}
 
@@ -189,3 +191,5 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
         virtual_text = false
     }
 )
+
+-- vim.api.nvim_set_keymap('n', 'K', ':lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })

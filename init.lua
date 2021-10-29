@@ -3,7 +3,7 @@ vim.g.maplocalleader = ","
 
 vim.cmd("cd %:p:h")
 
-vim.cmd("colorscheme onedark")
+vim.cmd("colorscheme onedarkpro")
 
 require("modules._settings")
 require("modules._colorscheme") -- Colorscheme dependent settings
@@ -25,7 +25,7 @@ require("plugins._gitsigns")
 
 -- Editing plugins
 require("plugins._matchup")
-require("plugins._kommentary")
+-- require("plugins._kommentary")
 require("plugins._ultisnips")
 require("plugins._autopairs")
 

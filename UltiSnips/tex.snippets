@@ -45,12 +45,20 @@ snippet template "Template"
 \theoremstyle{definition}
 \newtheorem*{definition}{Definition}
 \pgfplotsset{width=10cm,compat=1.9}
+
+% stats commands
 \newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathbb{V}\mathrm{ar}}
+\newcommand{\Cov}{\mathbb{C}\mathrm{ov}}
+\newcommand{\Risk}{\mathcal{R}}
+
+% common number sets
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\C}{\mathbb{C}}
+
 \newcommand{\bigO}{\mathcal{O}}
 
 \geometry{
@@ -123,10 +131,21 @@ snippet frtemplate "french template"
 \theoremstyle{definition}
 \newtheorem*{definition}{Définition}
 \pgfplotsset{width=10cm,compat=1.9}
+
+
+% stats commands
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathbb{V}\mathrm{ar}}
+\newcommand{\Cov}{\mathbb{C}\mathrm{ov}}
+\newcommand{\Risk}{\mathcal{R}}
+
+% common number sets
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\Risk}{\mathcal{R}}
 
 \theoremstyle{definition}
 \newtheorem{problem}{Problème}
@@ -595,6 +614,11 @@ snippet neq "neq" iA
 endsnippet
 
 # Linear Algebra
+context "math()"
+snippet tr "^T" iA
+^T
+endsnippet
+
 context "math()"
 snippet norm "norm" iA
 \|$1\|$0

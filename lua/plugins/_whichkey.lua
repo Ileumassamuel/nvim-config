@@ -65,9 +65,9 @@ wk.register({
     c = {
         name = '+code',
         d = { "<cmd>execute \"lua vim.lsp.diagnostic.show_line_diagnostics()\"<cr>", "Show line diagnostics"},
-        -- r = { "<cmd>execute \"lua require('lspsaga.rename').rename()\"<cr>", "Rename symbol" },
+        r = { "<cmd>execute \"lua lua.vim.lsp.rename()\"<cr>", "Rename symbol" },
         w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "Show workspace diagnostics" },
-        -- a = { "<cmd>execute \"lua require('lspsaga.codeaction').code_action()\"<cr>", "Code actions"},
+        a = { "<cmd>execute \"lua require('telescope.builtin').lsp_code_actions()\"<cr>", "Code actions"},
         x = { "<cmd>TroubleToggle<cr>", "Show errors"}
     },
     g = {

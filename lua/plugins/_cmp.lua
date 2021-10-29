@@ -40,6 +40,6 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = "ultisnips" },
         { name = 'path' },
-        -- { name = "latex_symbols" },
+        { name = "latex_symbols" },
     }
 })
