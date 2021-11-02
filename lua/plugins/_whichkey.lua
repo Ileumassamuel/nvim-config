@@ -68,7 +68,8 @@ wk.register({
         r = { "<cmd>execute \"lua lua.vim.lsp.rename()\"<cr>", "Rename symbol" },
         w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "Show workspace diagnostics" },
         a = { "<cmd>execute \"lua require('telescope.builtin').lsp_code_actions()\"<cr>", "Code actions"},
-        x = { "<cmd>TroubleToggle<cr>", "Show errors"}
+        x = { "<cmd>TroubleToggle<cr>", "Show errors"},
+        s = { "<cmd>ISwap<cr>", "Swap params"}
     },
     g = {
         name = '+git',

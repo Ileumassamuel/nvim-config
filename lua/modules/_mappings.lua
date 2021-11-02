@@ -15,9 +15,6 @@ vim.api.nvim_set_keymap('n', '[o', ":<C-u>put!=repeat(nr2char(10),v:count)<Bar>e
 -- Pasting
 -- vim.api.nvim_set_keymap('n', 'p', "p=`]", { noremap = true, silent = true })
 
--- Copying
-vim.api.nvim_set_keymap('n', 'Y', "yg_", { noremap = true, silent = true })
-
 -- Sane window resizing
 vim.api.nvim_set_keymap('n', '<Left>', "<CMD>vertical resize +2<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Right>', "<CMD>vertical resize -2<CR>", { noremap = true, silent = true })

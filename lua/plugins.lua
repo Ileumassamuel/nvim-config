@@ -115,13 +115,6 @@ return require('packer').startup(function()
     use { 'srcery-colors/srcery-vim' }
     use { 'folke/tokyonight.nvim' }
     use { 'glepnir/zephyr-nvim' }
-    -- use { 'projekt0n/github-nvim-theme',
-    --     config = function()
-    --         require("github-theme").setup {
-    --             themeStyle = "dark",
-    --         }
-    --     end
-    -- }
 
     -- Git
     use {
@@ -154,6 +147,8 @@ return require('packer').startup(function()
         end
     }
     use {'windwp/nvim-autopairs', opt = true} -- autopairs brackets, braces etc
+    use { 'mizlan/iswap.nvim', opt = true } -- Swap parameters / list items
+
 
     -- Quick movements
     -- use {'phaazon/hop.nvim', opt = false} -- easymotion but better

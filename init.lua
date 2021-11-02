@@ -1,9 +1,16 @@
+if vim.g.nvui then
+  vim.cmd [[set guifont=FiraCode\ Nerd\ Font:h11]]
+  vim.cmd [[NvuiCmdFontFamily FiraCode Nerd Font]]
+  vim.cmd [[NvuiCmdFontSize 11.0]]
+  vim.cmd [[NvuiScrollAnimationDuration 0.2]]
+end
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
 vim.cmd("cd %:p:h")
 
-vim.cmd("colorscheme onedarkpro")
+vim.cmd("colorscheme edge")
 
 require("modules._settings")
 require("modules._colorscheme") -- Colorscheme dependent settings
@@ -25,9 +32,9 @@ require("plugins._gitsigns")
 
 -- Editing plugins
 require("plugins._matchup")
--- require("plugins._kommentary")
 require("plugins._ultisnips")
 require("plugins._autopairs")
+require("plugins._iswap")
 
 -- Finders
 require("plugins._telescope")
@@ -45,3 +52,9 @@ require("plugins._vimtex")
 
 -- Toggleterm (terminal)
 require("plugins._toggleterm")
+
+-- Nvui
+if vim.g.nvui then
+  -- Configure through vim commands
+  vim.cmd [[NvuiCmdFontFamily Jetbrains Mono]]
+end
