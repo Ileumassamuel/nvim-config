@@ -10,7 +10,7 @@ vim.g.maplocalleader = ","
 
 vim.cmd("cd %:p:h")
 
-vim.cmd("colorscheme edge")
+vim.cmd("colorscheme srcery")
 
 require("modules._settings")
 require("modules._colorscheme") -- Colorscheme dependent settings
