@@ -81,7 +81,7 @@ wk.register({
     },
     i = {
         name = '+insert',
-        d = {'<Plug>(doge-generate)', 'Insert documentation'}
+        d = { "<cmd>execute \"lua require('neogen').generate()\"<cr>", 'Insert documentation'}
     },
     d = {
         name = '+debug',

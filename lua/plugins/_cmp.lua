@@ -1,4 +1,5 @@
 local cmp = require'cmp'
+local neogen = require('neogen')
 
 local t = function(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
@@ -20,6 +21,8 @@ cmp.setup({
         ['<C-j>'] = function(fallback)
             if vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
                 vim.fn.feedkeys(t("<C-R>=UltiSnips#JumpForwards()<CR>"))
+            elseif neogen.jumpable() then
+                vim.fn.feedkeys(t("<cmd>lua require('neogen').jump_next()<CR>"), "")
             elseif cmp.visible() then
                 cmp.select_next_item()
             else

@@ -10,7 +10,7 @@ vim.g.maplocalleader = ","
 
 vim.cmd("cd %:p:h")
 
-vim.cmd("colorscheme srcery")
+vim.cmd("colorscheme onedark")
 
 require("modules._settings")
 require("modules._colorscheme") -- Colorscheme dependent settings
@@ -52,9 +52,3 @@ require("plugins._vimtex")
 
 -- Toggleterm (terminal)
 require("plugins._toggleterm")
-
--- Nvui
-if vim.g.nvui then
-  -- Configure through vim commands
-  vim.cmd [[NvuiCmdFontFamily Jetbrains Mono]]
-end

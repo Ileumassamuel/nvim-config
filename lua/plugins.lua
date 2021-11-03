@@ -141,11 +141,21 @@ return require('packer').startup(function()
     use {'tpope/vim-surround', opt = false } -- Surround text
     use {'matze/vim-move'} -- Move lines/characters
     use {'tpope/vim-repeat'} -- Repeat using dot command from plugins
-    use { 'kkoomen/vim-doge', run = ":call doge#install()",
-        config = function ()
-            vim.api.nvim_set_var('doge_enable_mappings', 0)
-        end
+    use {
+        "danymat/neogen",
+        config = function()
+            require('neogen').setup {
+                enabled = true,
+                jump_map = nil
+            }
+        end,
+        requires = "nvim-treesitter/nvim-treesitter"
     }
+    -- use { 'kkoomen/vim-doge', run = ":call doge#install()",
+    --     config = function ()
+    --         vim.api.nvim_set_var('doge_enable_mappings', 0)
+    --     end
+    -- }
     use {'windwp/nvim-autopairs', opt = true} -- autopairs brackets, braces etc
     use { 'mizlan/iswap.nvim', opt = true } -- Swap parameters / list items
 
