@@ -169,7 +169,7 @@ return require('packer').startup(function()
     use {'KeitaNakamura/tex-conceal.vim', ft = {'tex'} }
 
     -- Misc
-    -- use {'psliwka/vim-smoothie', 
+    -- use {'psliwka/vim-smoothie',
     --     config = function ()
     --         vim.api.nvim_set_var('smoothie_enabled', 1)
     --     end

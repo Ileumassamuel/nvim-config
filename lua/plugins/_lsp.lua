@@ -71,7 +71,7 @@ lspconfig.efm.setup{
     settings = {
         rootMarkers = {".git/"},
         languages = {
-            python = { black, mypy },
+            python = { black },
             yaml = { prettier },
             json = { prettier },
             html = { prettier },

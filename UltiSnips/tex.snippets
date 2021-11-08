@@ -24,22 +24,25 @@ snippet template "Template"
 \documentclass[a4paper,12pt]{article}
 
 \usepackage{amsmath,amsfonts,amssymb} % Math packages
-\usepackage{amsthm}   % Theorems
-\usepackage{array}    % Better tables
-\usepackage{chemfig}  % chemical figures
-\usepackage{physics}  % derivatives and partials
-\usepackage{float}    % Better positioning [H]
-\usepackage{framed}   % Framed boxes
-\usepackage{geometry} % Required for adjusting page dimensions and margins
-\usepackage{graphicx} % Include images
-\usepackage{multirow} % multicolumn tables
-\usepackage{pgfplots} % Create plots in latex
-\usepackage{siunitx}  % SI unit system
-\usepackage{listings} % Code environments
+\usepackage{mathtools} % For defining floor and ceiling functions
+\usepackage{amsthm}    % Theorems
+\usepackage{bm} 	   % Bold math
+\usepackage{bbm}	   % More bold math?
+\usepackage{array}     % Better tables
+\usepackage{chemfig}   % chemical figures
+\usepackage{physics}   % derivatives and partials
+\usepackage{float}     % Better positioning [H]
+\usepackage{framed}    % Framed boxes
+\usepackage{geometry}  % Required for adjusting page dimensions and margins
+\usepackage{graphicx}  % Include images
+\usepackage{multirow}  % multicolumn tables
+\usepackage{pgfplots}  % Create plots in latex
+\usepackage{siunitx}   % SI unit system
+\usepackage{listings}  % Code environments
 \usepackage[shortlabels]{enumitem} %lets us change the enumeration to (a), (b), ...
-\usepackage{booktabs} % Better looking horizontal rules
-\usepackage{makecell} % Pre-formatting of column heads
-\usepackage{hyperref} % Clickable links
+\usepackage{booktabs}  % Better looking horizontal rules
+\usepackage{makecell}  % Pre-formatting of column heads
+\usepackage{hyperref}  % Clickable links
 \renewcommand{\arraystretch}{1.6}
 
 \theoremstyle{definition}
@@ -59,7 +62,15 @@ snippet template "Template"
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\C}{\mathbb{C}}
 
+% Cs stuff
 \newcommand{\bigO}{\mathcal{O}}
+
+% Indicator function
+\newcommand{\Ind}{\mathbbm{1}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\angleb{\langle}{\rangle}
 
 \geometry{
 	paper=a4paper, % Paper size, change to letterpaper for US letter size
@@ -105,11 +116,13 @@ snippet frtemplate "french template"
 
 \documentclass[a4paper,12pt]{article}
 
-\usepackage{bm} % Bold math
+\usepackage{bm}  % Bold math
+\usepackage{bbm} % More bold math?
 \usepackage[T1]{fontenc} % French
 \usepackage[utf8]{inputenc} % French
 \usepackage[french]{babel} % French
 \usepackage{amsmath,amsfonts,amssymb} % Math packages
+\usepackage{mathtools} % For defining floor and ceiling functions
 \usepackage{amsthm}   % Theorems
 \usepackage{array}    % Better tables
 \usepackage{chemfig}  % chemical figures
@@ -146,7 +159,12 @@ snippet frtemplate "french template"
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
 
-\newcommand{\Risk}{\mathcal{R}}
+% Indicator function
+\newcommand{\Ind}{\mathbbm{1}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\angleb{\langle}{\rangle}
 
 \theoremstyle{definition}
 \newtheorem{problem}{Problème}
