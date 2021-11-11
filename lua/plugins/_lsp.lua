@@ -66,20 +66,20 @@ vim.g.format_options_html = format_options_prettier
 vim.g.format_options_yaml = format_options_prettier
 
 lspconfig.eslint.setup{}
-lspconfig.efm.setup{
-    init_options = {documentFormatting = true},
-    settings = {
-        rootMarkers = {".git/"},
-        languages = {
-            python = { black },
-            yaml = { prettier },
-            json = { prettier },
-            html = { prettier },
-            css = { prettier },
-            cpp = { cppcheck }
-        }
-    }
-}
+-- lspconfig.efm.setup{
+--     init_options = {documentFormatting = true},
+--     settings = {
+--         rootMarkers = {".git/"},
+--         languages = {
+--             python = { black },
+--             yaml = { prettier },
+--             json = { prettier },
+--             html = { prettier },
+--             css = { prettier },
+--             cpp = { cppcheck }
+--         }
+--     }
+-- }
 
 lspconfig.ccls.setup{
     init_options = {

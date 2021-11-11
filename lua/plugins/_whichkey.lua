@@ -50,7 +50,8 @@ wk.register({
         s = { '<cmd>set spell!<cr>', 'Toggle spell checker' },
         z = { '<cmd>ZenMode<cr>', 'Zen mode' },
         l = { '<cmd>set number! relativenumber!<cr>', 'Toggle line numbers' },
-        m = { '<cmd>let g:smoothie_enabled=0<cr>', 'Disable smoothie' },
+        -- m = { '<cmd>let g:smoothie_enabled=0<cr>', 'Disable smoothie' },
+        b = { '<cmd>GitBlameToggle<cr>', 'Toggle blamer' },
     },
     s = {
         name = '+search',

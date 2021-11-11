@@ -66,7 +66,7 @@ snippet template "Template"
 \newcommand{\bigO}{\mathcal{O}}
 
 % Indicator function
-\newcommand{\Ind}{\mathbbm{1}}
+\newcommand{\Ind}[1]{\mathbbm{1}_{\{#1\}}}
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
@@ -160,7 +160,7 @@ snippet frtemplate "french template"
 \newcommand{\Z}{\mathbb{Z}}
 
 % Indicator function
-\newcommand{\Ind}{\mathbbm{1}}
+\newcommand{\Ind}[1]{\mathbbm{1}_{\{#1\}}}
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
@@ -640,7 +640,7 @@ endsnippet
 
 context "math()"
 snippet norm "norm" iA
-\|$1\|$0
+\norm{$0}
 endsnippet
 
 context "math()"
