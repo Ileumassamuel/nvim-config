@@ -59,15 +59,6 @@ require'nvim-treesitter.configs'.setup {
                 ["am"] = "@conditional.outer",
             },
         },
-        -- swap = {
-        --     enable = true,
-        --     swap_next = {
-        --         ["<leader>aa"] = "@parameter.inner",
-        --     },
-        --     swap_previous = {
-        --         ["<leader>aA"] = "@parameter.inner",
-        --     },
-        -- },
         move = {
             enable = true,
             goto_next_start = {

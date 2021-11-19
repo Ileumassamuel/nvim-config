@@ -86,6 +86,10 @@ local autocmds = {
     JsTsTaberoo = {
         {"FileType typescriptreact,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab"}
     },
+    GlslFiletypes = {
+        { "BufNewFile,BufRead *.vs.glsl set filetype=glsl" },
+        { "BufNewFile,BufRead *.fs.glsl set filetype=glsl" }
+    }
 }
 
 myUtils.nvim_create_augroups(autocmds)
