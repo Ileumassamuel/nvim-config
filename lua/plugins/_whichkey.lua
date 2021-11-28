@@ -52,6 +52,7 @@ wk.register({
         l = { '<cmd>set number! relativenumber!<cr>', 'Toggle line numbers' },
         -- m = { '<cmd>let g:smoothie_enabled=0<cr>', 'Disable smoothie' },
         b = { '<cmd>GitBlameToggle<cr>', 'Toggle blamer' },
+        c = { '<cmd>Telescope colorscheme<cr>', 'Change colorscheme' },
     },
     s = {
         name = '+search',
@@ -65,8 +66,10 @@ wk.register({
     },
     c = {
         name = '+code',
-        d = { "<cmd>execute \"lua vim.lsp.diagnostic.show_line_diagnostics()\"<cr>", "Show line diagnostics"},
-        r = { "<cmd>execute \"lua lua.vim.lsp.rename()\"<cr>", "Rename symbol" },
+        d = { "<cmd>Lspsaga show_line_diagnostics<cr>", "Show line diagnostics"},
+        -- r = { "<cmd>execute \"lua lua.vim.lsp.rename()\"<cr>", "Rename symbol" },
+        r = { "<cmd>Lspsaga rename<cr>", "Rename symbol" },
+        -- d = { "<cmd>execute \"lua vim.lsp.diagnostic.show_line_diagnostics()\"<cr>", "Show line diagnostics"},
         w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "Show workspace diagnostics" },
         a = { "<cmd>execute \"lua require('telescope.builtin').lsp_code_actions()\"<cr>", "Code actions"},
         x = { "<cmd>TroubleToggle<cr>", "Show errors"},
@@ -120,7 +123,8 @@ wk.register({
 
 wk.register({
     h = "Previous hunk",
-    e = { "<cmd>execute \"lua vim.lsp.diagnostic.goto_prev()\"<cr>", "Previous lsp error"},
+    -- e = { "<cmd>execute \"lua vim.lsp.diagnostic.goto_prev()\"<cr>", "Previous lsp error"},
+    e = { "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Previous lsp error"},
     [" "] = "Add lines above",
     o = "Add lines above",
     ["["] = "Previous class start",
@@ -128,7 +132,8 @@ wk.register({
 
 wk.register({
     h = "Next hunk",
-    e = { "<cmd>execute \"lua vim.lsp.diagnostic.goto_next()\"<cr>" , "Next lsp error"},
+    -- e = { "<cmd>execute \"lua vim.lsp.diagnostic.goto_next()\"<cr>" , "Next lsp error"},
+    e = { "<cmd>Lspsaga diagnostic_jump_next<cr>" , "Next lsp error"},
     [" "] = "Add lines below",
     o = "Add lines below",
     ["]"] = "Next class start",

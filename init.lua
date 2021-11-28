@@ -24,7 +24,7 @@ require("plugins._cmp")
 require("plugins._lsp")
 require("plugins._dap")
 require("plugins._trouble")
--- require("plugins._lsp-signature")
+require("plugins._lsp-signature")
 
 -- Git integration
 require("plugins._blamer")
@@ -45,7 +45,7 @@ require("plugins._dashboard")
 require("plugins._galaxyline")
 require("plugins._bufferline")
 require("plugins._indentline")
-require("plugins._kinds")
+require("plugins._saga")
 
 -- Tex
 require("plugins._vimtex")

@@ -1,5 +1,6 @@
 local cmp = require'cmp'
 local neogen = require('neogen')
+local lspkind = require('lspkind')
 
 local t = function(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
@@ -45,5 +46,8 @@ cmp.setup({
         { name = 'path' },
         { name = 'buffer' },
         { name = "latex_symbols" },
+    },
+    formatting = {
+        format = lspkind.cmp_format({with_text = true, maxwidth = 50})
     }
 })

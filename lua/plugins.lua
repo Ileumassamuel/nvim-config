@@ -27,17 +27,19 @@ return require('packer').startup(function()
     -- Language server protocol
     use {'neovim/nvim-lspconfig', opt = false}
     -- UI for Lsp commands
-    -- use {'glepnir/lspsaga.nvim', opt = true, branch = 'main', requires = { 'onsails/lspkind-nvim' } }
+    use {'tami5/lspsaga.nvim', opt = true, requires = { 'onsails/lspkind-nvim' } }
     -- UI for Lsp errors
     use {
         "folke/trouble.nvim",
         opt = true
     }
     -- Signature help
-    -- use {
-    --     "ray-x/lsp_signature.nvim",
-    --     opt = true
-    -- }
+    use {
+        "ray-x/lsp_signature.nvim",
+        opt = true
+    }
+
+    use {'onsails/lspkind-nvim'}
 
     -- Completion framework
     use {
@@ -48,7 +50,8 @@ return require('packer').startup(function()
             { 'quangnguyen30192/cmp-nvim-ultisnips' },
             { 'hrsh7th/cmp-path'},
             { "kdheepak/cmp-latex-symbols" },
-            { "hrsh7th/cmp-buffer" }
+            { "hrsh7th/cmp-buffer" },
+            { 'onsails/lspkind-nvim' }
         },
     }
     -- use { 
