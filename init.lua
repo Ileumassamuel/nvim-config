@@ -10,7 +10,7 @@ vim.g.maplocalleader = ","
 
 vim.cmd("cd %:p:h")
 
-vim.cmd("colorscheme onedark")
+vim.cmd("colorscheme zephyr")
 
 require("modules._settings")
 require("modules._colorscheme") -- Colorscheme dependent settings
@@ -24,7 +24,6 @@ require("plugins._cmp")
 require("plugins._lsp")
 require("plugins._dap")
 require("plugins._trouble")
-require("plugins._lsp-signature")
 
 -- Git integration
 require("plugins._blamer")

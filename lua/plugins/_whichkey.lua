@@ -155,3 +155,16 @@ wk.register({
     J = "Join line",
     S = "Split line"
 }, { prefix = "g"})
+
+wk.register({
+    i = {
+        c = "inner class",
+        f = "inner function",
+        l = "inner line",
+    },
+    a = {
+        c = "outer class",
+        f = "outer function",
+        ["/"] = "outer comment",
+    }
+}, { prefix = "d"})

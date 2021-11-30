@@ -2,6 +2,9 @@
 vim.api.nvim_set_keymap('i', '<C-f>', '<Right>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<C-b>', '<Left>', { noremap = true, silent = true })
 
+-- Delete in line
+vim.api.nvim_set_keymap('n', 'dil', '^d$', { noremap = true, silent = true })
+
 -- Hide the highlighted text from searches on escape
 vim.api.nvim_set_keymap('n', '<ESC>', ':noh<CR>', { noremap = true, silent = true })
 

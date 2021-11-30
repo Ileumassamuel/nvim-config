@@ -3,15 +3,20 @@ local lspconfig = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-local system_name
-if vim.fn.has("mac") == 1 then
-    system_name = "macOS"
-elseif vim.fn.has("unix") == 1 then
-    system_name = "Linux"
-elseif vim.fn.has('win32') == 1 then
-    system_name = "Windows"
-else
-    print("Unsupported system for sumneko")
+local signatureAttach = function (client, bufnr)
+    require'lsp_signature'.on_attach(
+        {
+            bind = true, -- This is mandatory, otherwise border config won't get registered.
+            handler_opts = {
+                border = "rounded"
+            },
+            floating_window = true, -- show hint in a floating window, set to false for virtual
+            fix_pos = true,
+            hint_enable = false,
+            -- use_lspsaga = true,
+            -- timer_interval = 200,
+            toggle_key = nil
+        }, bufnr)
 end
 
 -- Yaml language server
@@ -19,39 +24,6 @@ lspconfig.yamlls.setup{}
 
 -- Bash language server
 lspconfig.bashls.setup{}
-
--- C++ static analysis/linting
-local cppcheck = {
-    lintCommand = "cppcheck --quiet --force --enable=style --error-exitcode=1 ${INPUT}",
-    lintStdin = false,
-    lintFormats = { "%f:%l:%c: %m" },
-    rootMarkers = { "compile_commands.json" }
-}
-
--- Python linting
-local black = {
-    formatCommand = "black -",
-    formatStdin = true
-}
-
-local mypy = {
-    lintCommand = "mypy --show-column-numbers --ignore-missing-imports",
-    lintFormats = {"%f=%l:%c: %trror: %m", "%f=%l:%c: %tarning: %m", "%f=%l:%c: %tote: %m"}
-}
-
--- Prettier
-local prettier = {
-    formatCommand = ([[
-    ./node_modules/.bin/prettier
-    ${--config-precedence:configPrecedence}
-    ${--tab-width:tabWidth}
-    ${--single-quote:singleQuote}
-    ${--trailing-comma:trailingComma}
-    ]]):gsub(
-            "\n",
-            ""
-        )
-}
 
 local format_options_prettier = {
     tabWidth = 4,
@@ -66,20 +38,6 @@ vim.g.format_options_html = format_options_prettier
 vim.g.format_options_yaml = format_options_prettier
 
 lspconfig.eslint.setup{}
--- lspconfig.efm.setup{
---     init_options = {documentFormatting = true},
---     settings = {
---         rootMarkers = {".git/"},
---         languages = {
---             python = { black },
---             yaml = { prettier },
---             json = { prettier },
---             html = { prettier },
---             css = { prettier },
---             cpp = { cppcheck }
---         }
---     }
--- }
 
 lspconfig.ccls.setup{
     init_options = {
@@ -124,10 +82,20 @@ lspconfig.jsonls.setup{}
 lspconfig.html.setup{}
 lspconfig.jdtls.setup{}
 
-lspconfig.pylsp.setup{}
+lspconfig.pylsp.setup{ on_attach = signatureAttach }
 
 lspconfig.rls.setup {}
 
+local system_name
+if vim.fn.has("mac") == 1 then
+  system_name = "macOS"
+elseif vim.fn.has("unix") == 1 then
+  system_name = "Linux"
+elseif vim.fn.has('win32') == 1 then
+  system_name = "Windows"
+else
+  print("Unsupported system for sumneko")
+end
 local sumneko_root_path = vim.fn.stdpath('cache')..'/lspconfig/lua-language-server'
 local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
 lspconfig.sumneko_lua.setup{

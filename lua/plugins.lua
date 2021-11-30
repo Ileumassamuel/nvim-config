@@ -35,8 +35,7 @@ return require('packer').startup(function()
     }
     -- Signature help
     use {
-        "ray-x/lsp_signature.nvim",
-        opt = true
+        "ray-x/lsp_signature.nvim"
     }
 
     use {'onsails/lspkind-nvim'}
@@ -54,20 +53,12 @@ return require('packer').startup(function()
             { 'onsails/lspkind-nvim' }
         },
     }
-    -- use { 
-    --     'ms-jpq/coq_nvim', 
-    --     branch = 'coq',
-    --     requires = {
-    --         {'SirVer/ultisnips'},
-    --     },
-    -- }
 
     -- Debugger
     use {
         "rcarriga/nvim-dap-ui",
         requires = {"mfussenegger/nvim-dap"}
     }
-    -- use {'puremourning/vimspector' , opt= true}
 
     -- Snippets
     use {'honza/vim-snippets', opt = false}
@@ -105,11 +96,6 @@ return require('packer').startup(function()
 
     -- Esthetic
     use { 'lukas-reineke/indent-blankline.nvim', branch = 'master' } -- Indent lines
-    -- use {
-    --     'yamatsum/nvim-web-nonicons',
-    --     requires = {'kyazdani42/nvim-web-devicons'},
-    --     opt = false
-    -- } -- Nice icons?
 
     -- Colorschemes (just the best)
     use { 'sainnhe/sonokai' }
@@ -134,9 +120,6 @@ return require('packer').startup(function()
             require('Comment').setup()
         end
     }
-    -- use {'b3nj5m1n/kommentary', opt = true } -- Commenting
-    -- use { "tpope/vim-commentary", opt = false } -- Commenting
-
     use {'andymass/vim-matchup', event = 'VimEnter *'} -- Match
     use {'rrethy/vim-hexokinase', run = "make hexokinase"} -- Colorize hex values
     use {'AndrewRadev/splitjoin.vim', opt = false} -- Split and join lines, but better
@@ -154,11 +137,6 @@ return require('packer').startup(function()
         end,
         requires = "nvim-treesitter/nvim-treesitter"
     }
-    -- use { 'kkoomen/vim-doge', run = ":call doge#install()",
-    --     config = function ()
-    --         vim.api.nvim_set_var('doge_enable_mappings', 0)
-    --     end
-    -- }
     use {'windwp/nvim-autopairs', opt = true} -- autopairs brackets, braces etc
     use { 'mizlan/iswap.nvim', opt = true } -- Swap parameters / list items
 
@@ -171,20 +149,6 @@ return require('packer').startup(function()
     use {'lervag/vimtex', ft = {'tex'} } -- Tex
     use {'KeitaNakamura/tex-conceal.vim', ft = {'tex'} }
 
-    -- Misc
-    -- use {'psliwka/vim-smoothie',
-    --     config = function ()
-    --         vim.api.nvim_set_var('smoothie_enabled', 1)
-    --     end
-    -- }
-    -- use { 'karb94/neoscroll.nvim',
-    --     config = function()
-    --         require("neoscroll").setup {
-    --             hide_cursor = false,
-    --         }
-    --     end
-    -- }
-
     use {
         "folke/zen-mode.nvim",
         config = function()
@@ -195,11 +159,6 @@ return require('packer').startup(function()
             }
         end
     }
-    -- use { 'airblade/vim-rooter',
-    --     config = function ()
-    --         vim.api.nvim_set_var('rooter_silent_chdir', 1)
-    --     end
-    -- }
     use {
         "ahmedkhalf/project.nvim",
         config = function()

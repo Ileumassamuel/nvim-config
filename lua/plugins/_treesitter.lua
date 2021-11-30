@@ -47,8 +47,8 @@ require'nvim-treesitter.configs'.setup {
                 ["ac"] = "@class.outer",
                 ["ic"] = "@class.inner",
 
-                ["il"] = "@loop.inner",
-                ["al"] = "@loop.outer",
+                -- ["il"] = "@loop.inner",
+                -- ["al"] = "@loop.outer",
 
                 ["ib"] = "@block.inner",
                 ["ab"] = "@block.outer",
