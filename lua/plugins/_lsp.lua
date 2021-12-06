@@ -41,14 +41,18 @@ lspconfig.eslint.setup{}
 
 lspconfig.ccls.setup{
     init_options = {
-        compilationDatabaseDirectory = "build";
+        -- compilationDatabaseDirectory = "build";
         index = {
             threads = 0;
         };
         clang = {
             excludeArgs = { "-frounding-math"} ;
         };
-    }
+        cache = {
+            directory = ""
+        }
+    },
+    on_attach = signatureAttach
 }
 lspconfig.cssls.setup{}
 lspconfig.dockerls.setup{}

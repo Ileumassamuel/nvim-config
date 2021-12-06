@@ -38,6 +38,7 @@ wk.register({
         name = '+buffer',
         d = { '<cmd>Bdelete<cr>', 'Delete buffer' },
         k = { '<cmd>Bdelete<cr>', 'Kill buffer' },
+        K = { '<cmd>Bdelete!<cr>', 'Force kill buffer' },
         h = { '<cmd>Dashboard<cr>', 'Goto menu' },
         b = { '<cmd>Telescope buffers<cr>', 'Show buffers'},
         s = { '<cmd>w<cr>', 'Save buffer'},

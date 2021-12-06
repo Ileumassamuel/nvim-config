@@ -10,13 +10,17 @@ vim.g.maplocalleader = ","
 
 vim.cmd("cd %:p:h")
 
-vim.cmd("colorscheme zephyr")
+vim.cmd("colorscheme edge")
+
+vim.cmd [[command! PackerInstall packadd packer.nvim | lua require('plugins').install()]]
+vim.cmd [[command! PackerUpdate packadd packer.nvim | lua require('plugins').update()]]
+vim.cmd [[command! PackerSync packadd packer.nvim | lua require('plugins').sync()]]
+vim.cmd [[command! PackerClean packadd packer.nvim | lua require('plugins').clean()]]
+vim.cmd [[command! PackerCompile packadd packer.nvim | lua require('plugins').compile()]]
 
 require("modules._settings")
 require("modules._colorscheme") -- Colorscheme dependent settings
 require("modules._mappings")
-
-require("plugins")
 
 -- Core Programming Plugins
 require("plugins._treesitter")
