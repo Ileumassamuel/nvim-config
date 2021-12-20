@@ -1,10 +1,3 @@
-if vim.g.nvui then
-  vim.cmd [[set guifont=FiraCode\ Nerd\ Font:h11]]
-  vim.cmd [[NvuiCmdFontFamily FiraCode Nerd Font]]
-  vim.cmd [[NvuiCmdFontSize 11.0]]
-  vim.cmd [[NvuiScrollAnimationDuration 0.2]]
-end
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
@@ -45,7 +38,7 @@ require("plugins._whichkey")
 
 -- Esthetics
 require("plugins._dashboard")
-require("plugins._galaxyline")
+require("plugins._galaxyliner")
 require("plugins._bufferline")
 require("plugins._indentline")
 require("plugins._saga")

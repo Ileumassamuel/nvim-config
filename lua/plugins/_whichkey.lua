@@ -72,7 +72,8 @@ wk.register({
         r = { "<cmd>Lspsaga rename<cr>", "Rename symbol" },
         -- d = { "<cmd>execute \"lua vim.lsp.diagnostic.show_line_diagnostics()\"<cr>", "Show line diagnostics"},
         w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "Show workspace diagnostics" },
-        a = { "<cmd>execute \"lua require('telescope.builtin').lsp_code_actions()\"<cr>", "Code actions"},
+        -- a = { "<cmd>execute \"lua require('telescope.builtin').lsp_code_actions()\"<cr>", "Code actions"},
+        a = { "<cmd>Lspsaga code_action<cr>", "Code actions"},
         x = { "<cmd>TroubleToggle<cr>", "Show errors"},
         s = { "<cmd>ISwap<cr>", "Swap params"}
     },

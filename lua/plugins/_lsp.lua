@@ -25,18 +25,6 @@ lspconfig.yamlls.setup{}
 -- Bash language server
 lspconfig.bashls.setup{}
 
-local format_options_prettier = {
-    tabWidth = 4,
-    singleQuote = true,
-    trailingComma = "all",
-    configPrecedence = "prefer-file"
-}
-
-vim.g.format_options_json = format_options_prettier
-vim.g.format_options_css = format_options_prettier
-vim.g.format_options_html = format_options_prettier
-vim.g.format_options_yaml = format_options_prettier
-
 lspconfig.eslint.setup{}
 
 lspconfig.ccls.setup{
@@ -54,7 +42,10 @@ lspconfig.ccls.setup{
     },
     on_attach = signatureAttach
 }
-lspconfig.cssls.setup{}
+lspconfig.cssls.setup{
+    cmd = { "vscode-css-languageserver", "--stdio" },
+    capabilities = capabilities
+}
 lspconfig.dockerls.setup{}
 
 local pid = vim.fn.getpid()
@@ -73,17 +64,25 @@ lspconfig.texlab.setup{
 }
 
 lspconfig.tsserver.setup{
-    on_attach = function(client)
+    on_attach = function(client, bufnr)
         if client.config.flags then
             client.config.flags.allow_incremental_sync = true
         end
         client.resolved_capabilities.document_formatting = false
+
+        -- signatureAttach(client, bufnr)
     end,
     capabilities = capabilities
 }
 
-lspconfig.jsonls.setup{}
-lspconfig.html.setup{}
+lspconfig.jsonls.setup{
+    cmd = { "vscode-json-languageserver", "--stdio" },
+    capabilities = capabilities
+}
+lspconfig.html.setup{
+    cmd = { "vscode-html-languageserver", "--stdio" },
+    capabilities = capabilities
+}
 lspconfig.jdtls.setup{}
 
 lspconfig.pylsp.setup{ on_attach = signatureAttach }
@@ -128,32 +127,13 @@ lspconfig.sumneko_lua.setup{
 }
 
 -- R
-lspconfig.r_language_server.setup{}
+lspconfig.r_language_server.setup{ on_attach = signatureAttach }
 
 -- Svelte
 lspconfig.svelte.setup{}
-
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
         virtual_text = false
     }
 )
-
--- local border = {
---       {"🭽", "FloatBorder"},
---       {"▔", "FloatBorder"},
---       {"🭾", "FloatBorder"},
---       {"▕", "FloatBorder"},
---       {"🭿", "FloatBorder"},
---       {"▁", "FloatBorder"},
---       {"🭼", "FloatBorder"},
---       {"▏", "FloatBorder"},
--- }
---
--- vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border})
--- vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
---   border = border,
--- })
---
--- vim.api.nvim_set_keymap('n', 'K', ':lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })

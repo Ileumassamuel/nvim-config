@@ -21,11 +21,10 @@ return require('packer').startup(function()
             { "mfussenegger/nvim-ts-hint-textobject" },
             { "JoosepAlviste/nvim-ts-context-commentstring" }
         },
-        opt = true
     }
 
     -- Language server protocol
-    use {'neovim/nvim-lspconfig', opt = false}
+    use {'neovim/nvim-lspconfig'}
     -- UI for Lsp commands
     use {'tami5/lspsaga.nvim', opt = true, requires = { 'onsails/lspkind-nvim' } }
     -- UI for Lsp errors
@@ -61,32 +60,36 @@ return require('packer').startup(function()
     }
 
     -- Snippets
-    use {'honza/vim-snippets', opt = false}
+    use {'honza/vim-snippets' }
 
     -- Interface
     use {
         'kyazdani42/nvim-tree.lua', 
         requires = {'kyazdani42/nvim-web-devicons'},
         config = function() require'nvim-tree'.setup {} end,
-        opt = false,
     } -- super fast file tree viewer
     use {
-        'glepnir/galaxyline.nvim', branch = 'main', requires = {'kyazdani42/nvim-web-devicons'},
+        "SmiteshP/nvim-gps",
+        -- after = "nvim-treesitter",
         config = function ()
-            require'nvim-web-devicons'.setup {
-                -- globally enable default icons (default to false)
-                -- will get overriden by `get_icons` option
-                default = true;
-            }
+            require("nvim-gps").setup()
+        end,
+        requires = "nvim-treesitter/nvim-treesitter"
+    }
+    use {
+        'glepnir/galaxyline.nvim',
+        branch = 'main',
+        -- after = "nvim-gps",
+        requires = {'kyazdani42/nvim-web-devicons' },
+        config = function ()
+            require'nvim-web-devicons'.setup { default = true; }
         end
     } -- Status line
     use { 'glepnir/dashboard-nvim', opt = true} -- Menu
     use { "folke/which-key.nvim" }
-    -- use { 'liuchengxu/vim-which-key', opt = false, requires = { 'glepnir/lspsaga.nvim' }} -- Keybinding reminder
     use {'akinsho/nvim-bufferline.lua', opt = true} -- bufferline
     use {
         'nvim-telescope/telescope.nvim',
-        opt = false,
         requires = {
             {'nvim-lua/popup.nvim'},
             {'nvim-lua/plenary.nvim'},
@@ -110,7 +113,7 @@ return require('packer').startup(function()
     use {
         'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' }
     }
-    use {'junegunn/gv.vim', requires = {'tpope/vim-fugitive'}, opt = false}
+    use {'junegunn/gv.vim', requires = {'tpope/vim-fugitive'}}
     use { 'f-person/git-blame.nvim', opt = true } -- inline blaming
 
     -- Editing
@@ -122,10 +125,10 @@ return require('packer').startup(function()
     }
     use {'andymass/vim-matchup', event = 'VimEnter *'} -- Match
     use {'rrethy/vim-hexokinase', run = "make hexokinase"} -- Colorize hex values
-    use {'AndrewRadev/splitjoin.vim', opt = false} -- Split and join lines, but better
-    use {'tommcdo/vim-exchange', opt = false} -- Exchange text locations
-    use {'junegunn/vim-easy-align', opt = false} -- Align characters
-    use {'tpope/vim-surround', opt = false } -- Surround text
+    use {'AndrewRadev/splitjoin.vim'} -- Split and join lines, but better
+    use {'tommcdo/vim-exchange'} -- Exchange text locations
+    use {'junegunn/vim-easy-align'} -- Align characters
+    use {'tpope/vim-surround'} -- Surround text
     use {'matze/vim-move'} -- Move lines/characters
     use {'tpope/vim-repeat'} -- Repeat using dot command from plugins
     use {
@@ -152,21 +155,13 @@ return require('packer').startup(function()
     use {
         "folke/zen-mode.nvim",
         config = function()
-            require("zen-mode").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
+            require("zen-mode").setup { }
         end
     }
     use {
         "ahmedkhalf/project.nvim",
         config = function()
-            require("project_nvim").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
+            require("project_nvim").setup { }
         end
     }
 

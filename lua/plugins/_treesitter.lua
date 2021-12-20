@@ -1,10 +1,10 @@
-vim.cmd [[packadd nvim-treesitter]]
-vim.cmd [[packadd nvim-treesitter-textobjects]]
-vim.cmd [[packadd nvim-treesitter-refactor]]
-vim.cmd [[packadd playground]]
-vim.cmd [[packadd nvim-ts-autotag]]
-vim.cmd [[packadd nvim-ts-context-commentstring]]
-vim.cmd [[packadd nvim-ts-hint-textobject ]]
+-- vim.cmd [[packadd nvim-treesitter]]
+-- vim.cmd [[packadd nvim-treesitter-textobjects]]
+-- vim.cmd [[packadd nvim-treesitter-refactor]]
+-- vim.cmd [[packadd playground]]
+-- vim.cmd [[packadd nvim-ts-autotag]]
+-- vim.cmd [[packadd nvim-ts-context-commentstring]]
+-- vim.cmd [[packadd nvim-ts-hint-textobject ]]
 
 require'nvim-treesitter.configs'.setup {
     ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
