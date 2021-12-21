@@ -26,7 +26,7 @@ return require('packer').startup(function()
     -- Language server protocol
     use {'neovim/nvim-lspconfig'}
     -- UI for Lsp commands
-    use {'tami5/lspsaga.nvim', opt = true, requires = { 'onsails/lspkind-nvim' } }
+    use {'ileumassamuel/lspsaga.nvim', opt = true, requires = { 'onsails/lspkind-nvim' } }
     -- UI for Lsp errors
     use {
         "folke/trouble.nvim",
