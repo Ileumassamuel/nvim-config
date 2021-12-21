@@ -82,7 +82,7 @@ lspconfig.tsserver.setup{
         end
         client.resolved_capabilities.document_formatting = false
 
-        -- signatureAttach(client, bufnr)
+        signatureAttach(client, bufnr)
     end,
     capabilities = capabilities
 }

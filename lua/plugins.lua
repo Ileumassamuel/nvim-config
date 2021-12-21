@@ -77,8 +77,8 @@ return require('packer').startup(function()
         requires = "nvim-treesitter/nvim-treesitter"
     }
     use {
-        'glepnir/galaxyline.nvim',
-        branch = 'main',
+        'ileumassamuel/galaxyline.nvim',
+        branch = 'bugfix/diagnostics',
         -- after = "nvim-gps",
         requires = {'kyazdani42/nvim-web-devicons' },
         config = function ()
