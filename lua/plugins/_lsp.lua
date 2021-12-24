@@ -23,13 +23,10 @@ local systemName
 if vim.fn.has("mac") == 1 then
   systemName = "macOS"
 elseif vim.fn.has("unix") == 1 then
-  systemName = "Linux"
+  systemName = "linux"
 elseif vim.fn.has('win32') == 1 then
-  systemName = "Windows"
-else
-  print("Unsupported system for sumneko")
+  systemName = "windows"
 end
-
 
 -- Yaml language server
 lspconfig.yamlls.setup{}
