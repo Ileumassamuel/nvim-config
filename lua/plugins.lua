@@ -99,6 +99,7 @@ return require('packer').startup(function()
         requires = {
             {'nvim-lua/popup.nvim'},
             {'nvim-lua/plenary.nvim'},
+            { "nvim-telescope/telescope-file-browser.nvim" },
         },
     } -- extensible fuzzy finder
 

@@ -32,5 +32,7 @@ require('telescope').setup{
         },
         file_ignore_patterns = {"node_modules"},
         buffer_previewer_maker = new_maker,
-    }
+    },
 }
+
+require("telescope").load_extension "file_browser"
