@@ -10,8 +10,9 @@ require'nvim-treesitter.configs'.setup {
     ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
     highlight = {
         enable = true,              -- false will disable the whole extension
-        -- disable = { "c_sharp" },  -- list of language that will be disabled
+        disable = { "lua" },  -- list of language that will be disabled
         use_languagetree = false, -- Use this to enable language injection (this is very unstable)
+        additional_vim_regex_highlighting = "latex"
     },
 
     indent = {

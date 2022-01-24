@@ -1,6 +1,7 @@
 local cmp = require'cmp'
 local neogen = require('neogen')
 local lspkind = require('lspkind')
+local cmpUltisnipsMappings = require("cmp_nvim_ultisnips.mappings")
 
 local t = function(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)

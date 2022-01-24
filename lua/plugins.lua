@@ -54,7 +54,6 @@ return require('packer').startup(function()
             { 'quangnguyen30192/cmp-nvim-ultisnips' },
             { 'hrsh7th/cmp-path'},
             { "kdheepak/cmp-latex-symbols" },
-            { "hrsh7th/cmp-buffer" },
             { 'onsails/lspkind-nvim' }
         },
     }

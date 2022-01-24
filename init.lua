@@ -9,7 +9,11 @@ vim.cmd [[command! PackerSync packadd packer.nvim | lua require('plugins').sync(
 vim.cmd [[command! PackerClean packadd packer.nvim | lua require('plugins').clean()]]
 vim.cmd [[command! PackerCompile packadd packer.nvim | lua require('plugins').compile()]]
 
-vim.cmd("colorscheme edge")
+vim.cmd("colorscheme nvcode")
+
+-- Wanna go transparent? Leave these two lines uncommented
+vim.cmd[[highlight Normal guibg=none]]
+vim.cmd[[highlight NonText guibg=none]]
 
 require("modules._settings")
 require("modules._colorscheme") -- Colorscheme dependent settings
