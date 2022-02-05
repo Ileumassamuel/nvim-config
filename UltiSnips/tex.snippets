@@ -640,12 +640,20 @@ snippet binom "binom" w
 \binom{$1}{$2}$0
 endsnippet
 
-snippet meq "equation" bA
+snippet seq "numberless equation" bA
 \begin{equation*}
 	\begin{aligned}
 		$0
 	\end{aligned}
 \end{equation*}
+endsnippet
+
+snippet meq "numbered equation"
+\begin{equation}
+	\begin{aligned}
+		$0
+	\end{aligned}
+\end{equation}
 endsnippet
 
 snippet OR "vee" iA
@@ -673,4 +681,8 @@ endsnippet
 
 snippet tsf "textsf" iA
 \textsf{$1}$0
+endsnippet
+
+snippet xee "xi" iA
+\xi
 endsnippet
