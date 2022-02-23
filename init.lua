@@ -11,7 +11,7 @@ vim.cmd [[command! PackerCompile packadd packer.nvim | lua require('plugins').co
 
 vim.cmd("colorscheme nvcode")
 
--- Wanna go transparent? Leave these two lines uncommented
+-- Wanna neovim with a transparent background? Keep the two following lines
 vim.cmd[[highlight Normal guibg=none]]
 vim.cmd[[highlight NonText guibg=none]]
 
@@ -44,7 +44,6 @@ require("plugins._whichkey")
 require("plugins._dashboard")
 require("plugins._galaxyliner")
 require("plugins._bufferline")
-require("plugins._indentline")
 require("plugins._saga")
 
 -- Tex

@@ -104,7 +104,20 @@ return require('packer').startup(function()
 
 
     -- Esthetic
-    use { 'lukas-reineke/indent-blankline.nvim', branch = 'master' } -- Indent lines
+    use {
+        'lukas-reineke/indent-blankline.nvim',
+        branch = 'master',
+        config = function()
+            require("indent_blankline").setup {
+                -- for example, context is off by default, use this to turn it on
+                show_current_context = true,
+                show_current_context_start = true,
+                filetype_exclude = { 'dashboard', 'packer', 'tex' },
+                buftype_exclude = {'help', 'terminal', 'nofile'},
+                show_end_of_line = true,
+            }
+        end
+    } -- Indent lines
 
     -- Colorschemes (just the best)
     use { 'sainnhe/sonokai' }
@@ -189,5 +202,7 @@ return require('packer').startup(function()
 
     use { 'moll/vim-bbye' }
     use { 'akinsho/nvim-toggleterm.lua', opt = true }
+
+    use { 'dstein64/vim-startuptime' }
 
 end)
