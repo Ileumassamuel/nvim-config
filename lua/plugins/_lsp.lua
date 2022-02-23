@@ -92,6 +92,9 @@ lspconfig.html.setup{
     cmd = { (systemName == "linux" and  "vscode-html-languageserver" or "vscode-html-language-server"), "--stdio" },
     capabilities = capabilities
 }
+
+lspconfig.tailwindcss.setup{}
+
 lspconfig.jdtls.setup{}
 
 lspconfig.pylsp.setup{ on_attach = signatureAttach }
