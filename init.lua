@@ -19,6 +19,9 @@ require("modules._settings")
 require("modules._colorscheme") -- Colorscheme dependent settings
 require("modules._mappings")
 
+-- Essential keybindings
+require("plugins._whichkey")
+
 -- Core Programming Plugins
 require("plugins._treesitter")
 require("plugins._cmp")
@@ -38,7 +41,6 @@ require("plugins._iswap")
 
 -- Finders
 require("plugins._telescope")
-require("plugins._whichkey")
 
 -- Esthetics
 require("plugins._dashboard")
