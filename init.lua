@@ -35,7 +35,6 @@ require("plugins._gitsigns")
 
 -- Editing plugins
 require("plugins._matchup")
-require("plugins._ultisnips")
 require("plugins._autopairs")
 require("plugins._iswap")
 

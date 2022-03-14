@@ -92,6 +92,7 @@ return require('packer').startup(function()
     } -- Status line
     use { 'glepnir/dashboard-nvim', opt = true} -- Menu
     use { "folke/which-key.nvim" }
+    use { 'mrjones2014/legendary.nvim' } -- Which key searcher
     use {'akinsho/nvim-bufferline.lua', opt = true} -- bufferline
     use {
         'nvim-telescope/telescope.nvim',

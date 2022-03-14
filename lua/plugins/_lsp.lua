@@ -65,9 +65,9 @@ lspconfig.omnisharp.setup{
 lspconfig.texlab.setup{
     settings = {
         texlab = {
-            build = {
-                onSave = true;
-            }
+            -- build = {
+            --     onSave = true;
+            -- }
         }
     };
 }
@@ -106,6 +106,12 @@ lspconfig.r_language_server.setup{ on_attach = signatureAttach }
 
 -- Svelte
 lspconfig.svelte.setup{}
+
+-- Writing
+lspconfig.ltex.setup{}
+
+-- Prisma
+lspconfig.prismals.setup{}
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {

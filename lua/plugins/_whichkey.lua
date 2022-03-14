@@ -1,4 +1,7 @@
+local lry = require('legendary')
 local wk = require("which-key")
+
+lry.setup()
 
 wk.register({
     [' '] = { '<cmd>Telescope find_files<cr>', 'Find file in project' },

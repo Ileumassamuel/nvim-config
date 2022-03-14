@@ -36,3 +36,7 @@ vim.api.nvim_set_keymap('o', 'gl', "g_", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'gh', "^", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', 'gh', "^", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('o', 'gh', "^", { noremap = true, silent = true })
+
+-- RSI
+vim.api.nvim_set_keymap('i', '<C-a>', "<C-o>0", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-e>', "<C-o>$", { noremap = true, silent = true })
