@@ -97,7 +97,8 @@ lspconfig.tailwindcss.setup{}
 
 lspconfig.jdtls.setup{}
 
-lspconfig.pylsp.setup{ on_attach = signatureAttach }
+-- lspconfig.pylsp.setup{ on_attach = signatureAttach }
+lspconfig.pyright.setup{ on_attach = signatureAttach }
 
 lspconfig.rls.setup {}
 
