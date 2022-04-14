@@ -91,7 +91,7 @@ local autocmds = {
         { "BufNewFile,BufRead *.fs.glsl set filetype=glsl" }
     },
     AstroFileType = {
-        { "BufNewFile,BufRead *.astro set filetype=html" },
+        { "BufNewFile,BufRead *.astro set filetype=astro" },
     }
 }
 

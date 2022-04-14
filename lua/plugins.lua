@@ -39,10 +39,6 @@ return require('packer').startup(function()
         opt = true
     }
     -- Signature help
-    use {
-        "ray-x/lsp_signature.nvim"
-    }
-
     use {'onsails/lspkind-nvim'}
 
     -- Completion framework
@@ -51,6 +47,7 @@ return require('packer').startup(function()
         requires = {
             {'SirVer/ultisnips'},
             { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lsp-signature-help' },
             { 'quangnguyen30192/cmp-nvim-ultisnips' },
             { 'hrsh7th/cmp-path'},
             { "kdheepak/cmp-latex-symbols" },
@@ -202,8 +199,7 @@ return require('packer').startup(function()
     }
 
     use { 'moll/vim-bbye' }
-    use { 'akinsho/nvim-toggleterm.lua', opt = true }
 
-    use { 'dstein64/vim-startuptime' }
+    use { 'gelguy/wilder.nvim' }
 
 end)

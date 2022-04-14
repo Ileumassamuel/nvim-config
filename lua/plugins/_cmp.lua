@@ -1,4 +1,5 @@
-local cmp = require'cmp'
+local cmp = require('cmp')
+local compare = require('cmp.config.compare')
 local neogen = require('neogen')
 local lspkind = require('lspkind')
 local cmpUltisnipsMappings = require("cmp_nvim_ultisnips.mappings")
@@ -13,10 +14,12 @@ cmp.setup({
             vim.fn["UltiSnips#Anon"](args.body)
         end,
     },
+    experimental = { ghost_text = true },
     mapping = {
         ['<TAB>'] = cmp.mapping.confirm({ select = true }),
 
-        ["<C-Space>"] = cmp.mapping.complete(),
+        -- ["<C-Space>"] = cmp.mapping.complete(),
+        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
 
         ['<C-e>'] = cmp.mapping.close(),
 
@@ -42,11 +45,21 @@ cmp.setup({
         end,
     },
     sources = {
+        { name = 'nvim_lsp_signature_help' },
         { name = 'nvim_lsp' },
         { name = "ultisnips" },
         { name = 'path' },
         -- { name = 'buffer' },
         { name = "latex_symbols" },
+    },
+    sorting = {
+        comparators = {
+            compare.locality,
+            compare.recently_used,
+            compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
+            compare.offset,
+            compare.order,
+        },
     },
     formatting = {
         format = lspkind.cmp_format({with_text = true, maxwidth = 50})

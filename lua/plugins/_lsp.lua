@@ -7,22 +7,6 @@ local lspconfig = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-local signatureAttach = function (client, bufnr)
-    require'lsp_signature'.on_attach(
-        {
-            bind = true, -- This is mandatory, otherwise border config won't get registered.
-            handler_opts = {
-                border = "rounded"
-            },
-            floating_window = true, -- show hint in a floating window, set to false for virtual
-            fix_pos = true,
-            hint_enable = false,
-            -- use_lspsaga = true,
-            -- timer_interval = 200,
-            toggle_key = nil
-        }, bufnr)
-end
-
 local systemName
 if vim.fn.has("mac") == 1 then
   systemName = "macOS"
@@ -53,7 +37,6 @@ lspconfig.ccls.setup{
             directory = ""
         }
     },
-    on_attach = signatureAttach
 }
 lspconfig.cssls.setup{
     cmd = { (systemName == "linux" and  "vscode-css-languageserver" or "vscode-css-language-server"), "--stdio" },
@@ -82,8 +65,6 @@ lspconfig.tsserver.setup{
             client.config.flags.allow_incremental_sync = true
         end
         client.resolved_capabilities.document_formatting = false
-
-        signatureAttach(client, bufnr)
     end,
     capabilities = capabilities
 }
@@ -101,13 +82,13 @@ lspconfig.tailwindcss.setup{}
 
 lspconfig.jdtls.setup{}
 
--- lspconfig.pylsp.setup{ on_attach = signatureAttach }
-lspconfig.pyright.setup{ on_attach = signatureAttach }
+-- lspconfig.pylsp.setup{}
+lspconfig.pyright.setup{}
 
 lspconfig.rls.setup {}
 
 -- R
-lspconfig.r_language_server.setup{ on_attach = signatureAttach }
+lspconfig.r_language_server.setup{}
 
 -- Svelte
 lspconfig.svelte.setup{}

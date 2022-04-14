@@ -7,7 +7,52 @@
 -- vim.cmd [[packadd nvim-ts-hint-textobject ]]
 
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    ensure_installed = {
+        "c",
+        "c_sharp",
+        "cpp",
+        "cuda",
+        "cmake",
+        "bibtex",
+        "dockerfile",
+        "fish",
+        "glsl",
+        "go",
+        "graphql",
+        "hack",
+        "haskell",
+        "java",
+        "yaml",
+        "markdown",
+        "comment",
+        "css",
+        "html",
+        "javascript",
+        "typescript",
+        "json",
+        "jsdoc",
+        "lua",
+        "php",
+        "astro",
+        "bash",
+        "regex",
+        "scss",
+        "vim",
+        "vue",
+        "latex",
+        "llvm",
+        "make",
+        "tsx",
+        "perl",
+        "ocaml",
+        "prisma",
+        "python",
+        "r",
+        "rust",
+        "svelte",
+        "toml",
+        "zig",
+    }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
     highlight = {
         enable = true,              -- false will disable the whole extension
         disable = { "lua" },  -- list of language that will be disabled

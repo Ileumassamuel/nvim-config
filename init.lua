@@ -50,5 +50,5 @@ require("plugins._saga")
 -- Tex
 require("plugins._vimtex")
 
--- Toggleterm (terminal)
-require("plugins._toggleterm")
+-- Wilder
+require("plugins._wilder")
