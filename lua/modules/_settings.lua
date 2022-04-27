@@ -71,6 +71,7 @@ local options = {
     conceallevel = 2,
     timeoutlen = 500, -- faster timeout wait time
     updatetime = 100, -- set faster update time
+    laststatus = 3, -- global status vlines
 }
 
 apply_options(options)
@@ -91,7 +92,7 @@ local autocmds = {
         { "BufNewFile,BufRead *.fs.glsl set filetype=glsl" }
     },
     AstroFileType = {
-        { "BufNewFile,BufRead *.astro set filetype=astro" },
+        { "BufNewFile,BufRead *.astro set filetype=html" },
     }
 }
 

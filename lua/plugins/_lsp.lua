@@ -52,9 +52,9 @@ lspconfig.omnisharp.setup{
 lspconfig.texlab.setup{
     settings = {
         texlab = {
-            -- build = {
-            --     onSave = true;
-            -- }
+            build = {
+                onSave = true;
+            }
         }
     };
 }
@@ -98,6 +98,9 @@ lspconfig.ltex.setup{}
 
 -- Prisma
 lspconfig.prismals.setup{}
+
+-- Golang
+lspconfig.gopls.setup{}
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {

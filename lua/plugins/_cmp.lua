@@ -47,7 +47,7 @@ cmp.setup({
     sources = {
         { name = 'nvim_lsp_signature_help' },
         { name = 'nvim_lsp' },
-        { name = "ultisnips" },
+        { name = "ultisnips", priority = 6 },
         { name = 'path' },
         -- { name = 'buffer' },
         { name = "latex_symbols" },
