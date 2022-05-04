@@ -96,9 +96,6 @@ lspconfig.svelte.setup{}
 -- Writing
 lspconfig.ltex.setup{}
 
--- Prisma
-lspconfig.prismals.setup{}
-
 -- Golang
 lspconfig.gopls.setup{}
 

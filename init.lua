@@ -11,7 +11,7 @@ vim.cmd [[command! PackerCompile packadd packer.nvim | lua require('plugins').co
 
 vim.cmd("colorscheme nvcode")
 
--- Wanna neovim with a transparent background? Keep the two following lines
+-- Want neovim with a transparent background? Keep the two following lines
 vim.cmd[[highlight Normal guibg=none]]
 vim.cmd[[highlight NonText guibg=none]]
 

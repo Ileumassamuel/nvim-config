@@ -132,6 +132,11 @@ return require('packer').startup(function()
     }
     use {'junegunn/gv.vim', requires = {'tpope/vim-fugitive'}}
     use { 'f-person/git-blame.nvim', opt = true } -- inline blaming
+    use {'akinsho/git-conflict.nvim',
+        config = function()
+            require('git-conflict').setup()
+        end
+    }
 
     -- Editing
     use {
