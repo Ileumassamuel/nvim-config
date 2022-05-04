@@ -45,7 +45,6 @@ require("plugins._telescope")
 require("plugins._dashboard")
 require("plugins._galaxyliner")
 require("plugins._bufferline")
-require("plugins._saga")
 
 -- Tex
 require("plugins._vimtex")

@@ -1,7 +1,3 @@
-vim.cmd[[packadd lspsaga.nvim]]
-
-local saga = require('lspsaga')
-
 saga.setup {
     error_sign = "",
     warn_sign = "",
