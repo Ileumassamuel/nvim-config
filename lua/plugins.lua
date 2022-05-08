@@ -36,8 +36,6 @@ return require('packer').startup(function()
         "folke/trouble.nvim",
         opt = true
     }
-    -- Signature help
-    use {'onsails/lspkind-nvim'}
 
     -- Completion framework
     use {
@@ -49,7 +47,6 @@ return require('packer').startup(function()
             { 'quangnguyen30192/cmp-nvim-ultisnips' },
             { 'hrsh7th/cmp-path'},
             { "kdheepak/cmp-latex-symbols" },
-            { 'onsails/lspkind-nvim' }
         },
     }
 

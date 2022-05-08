@@ -1,6 +1,5 @@
 local cmd = vim.api.nvim_command
-
-local myUtils = require("modules._utils")
+local api = vim.api
 
 local apply_options = function(opts)
     for k, v in pairs(opts) do
@@ -44,7 +43,7 @@ local options = {
 
     -- String value
     -- completeopt = 'menu,menuone,noselect,noinsert', -- better completion
-     completeopt = "menuone,noselect",
+    completeopt = "menuone,noselect",
     -- fillchars = "vert:│,eob:\\ ", -- make vertical split sign better
 
     -- foldmethod = "marker",
@@ -76,24 +75,31 @@ local options = {
 
 apply_options(options)
 
-local autocmds = {
-    LuaHighlight = {
-        {"TextYankPost * silent! lua require'vim.highlight'.on_yank()"};
-    },
-    HighlightLineOnInsert = {
-        {"InsertEnter", "*", "set cul"};
-        {"InsertLeave", "*", "set nocul"};
-    },
-    JsTsTaberoo = {
-        {"FileType typescriptreact,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab"}
-    },
-    GlslFiletypes = {
-        { "BufNewFile,BufRead *.vs.glsl set filetype=glsl" },
-        { "BufNewFile,BufRead *.fs.glsl set filetype=glsl" }
-    },
-    AstroFileType = {
-        { "BufNewFile,BufRead *.astro set filetype=html" },
-    }
-}
+local yankGrp = api.nvim_create_augroup("YankHighlight", { clear = true })
+api.nvim_create_autocmd("TextYankPost", {
+    command = "silent! lua vim.highlight.on_yank()",
+    group = yankGrp,
+})
 
-myUtils.nvim_create_augroups(autocmds)
+local glslFiletypes = api.nvim_create_augroup("GlslFiletypes", { clear = true })
+api.nvim_create_autocmd(
+    { "BufNewFile", "BufRead" },
+    { pattern = { "*.vs.glsl", "*.fs.glsl" }, command = "set filetype=glsl", group = glslFileTypes }
+)
+
+local jsTsTaberoo = api.nvim_create_augroup("JsTsTaberoo", { clear = true })
+api.nvim_create_autocmd("FileType", {
+    pattern = { "typescriptreact", "javascript" },
+    command = "setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab",
+    group = jsTsTaberoo,
+})
+
+local cursorGrp = api.nvim_create_augroup("CursorLine", { clear = true })
+api.nvim_create_autocmd(
+    { "InsertEnter" },
+    { pattern = "*", command = "set cul", group = cursorGrp }
+)
+api.nvim_create_autocmd(
+    { "InsertLeave" },
+    { pattern = "*", command = "set nocul", group = cursorGrp }
+)

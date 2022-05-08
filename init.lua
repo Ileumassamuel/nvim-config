@@ -9,7 +9,7 @@ vim.cmd [[command! PackerSync packadd packer.nvim | lua require('plugins').sync(
 vim.cmd [[command! PackerClean packadd packer.nvim | lua require('plugins').clean()]]
 vim.cmd [[command! PackerCompile packadd packer.nvim | lua require('plugins').compile()]]
 
-vim.cmd("colorscheme nvcode")
+vim.cmd("colorscheme aurora")
 
 -- Want neovim with a transparent background? Keep the two following lines
 vim.cmd[[highlight Normal guibg=none]]

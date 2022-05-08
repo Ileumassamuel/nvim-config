@@ -1,14 +1,40 @@
 local cmp = require('cmp')
 local compare = require('cmp.config.compare')
 local neogen = require('neogen')
-local lspkind = require('lspkind')
 local cmpUltisnipsMappings = require("cmp_nvim_ultisnips.mappings")
 
 local t = function(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
+local cmp_window = require "cmp.utils.window"
+
+function cmp_window:has_scrollbar()
+    return false
+end
+
+local function border(hl_name)
+    return {
+        { "╭", hl_name },
+        { "─", hl_name },
+        { "╮", hl_name },
+        { "│", hl_name },
+        { "╯", hl_name },
+        { "─", hl_name },
+        { "╰", hl_name },
+        { "│", hl_name },
+    }
+end
+
 cmp.setup({
+    window = {
+        completion = {
+            border = border "CmpBorder",
+        },
+        documentation = {
+            border = border "CmpDocBorder",
+        },
+    },
     snippet = {
         expand = function(args)
             vim.fn["UltiSnips#Anon"](args.body)
@@ -62,6 +88,11 @@ cmp.setup({
         },
     },
     formatting = {
-        format = lspkind.cmp_format({with_text = true, maxwidth = 50})
-    }
+        format = function(_, vim_item)
+            local icons = require "plugins._icons"
+            vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
+
+            return vim_item
+        end,
+    },
 })
